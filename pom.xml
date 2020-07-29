@@ -78,6 +78,11 @@
 				<artifactId>org.eclipse.lemminx</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.relaxng</groupId>
+				<artifactId>jing</artifactId>
+				<version>20181222</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>

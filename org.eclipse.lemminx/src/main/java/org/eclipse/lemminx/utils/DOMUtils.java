@@ -30,6 +30,8 @@ public class DOMUtils {
 
 	private static final String XSD_EXTENSION = ".xsd";
 
+	private static final String RNG_EXTENSION = ".rng";
+
 	// DTD file extensions
 	private static final String DTD_EXTENSION = ".dtd";
 
@@ -71,6 +73,33 @@ public class DOMUtils {
 	 */
 	public static boolean isXSD(String uri) {
 		return uri != null && uri.endsWith(XSD_EXTENSION);
+	}
+
+	/**
+	 * Returns true if the XML document is a RelaxNG Schema and false otherwise.
+	 * 
+	 * @return true if the XML document is a RelaxNG Schema and false otherwise.
+	 */
+	public static boolean isRNG(DOMDocument document) {
+		if (document == null) {
+			return false;
+		}
+		String uri = document.getDocumentURI();
+		if (isRNG(uri)) {
+			return true;
+		}
+		// TODO: any other conditions, how something might be RNG schema?
+		return false;
+	}
+
+	/**
+	 * Returns true if the given URI is a RelaxNG Schema and false otherwise.
+	 * 
+	 * @param uri the URI to check
+	 * @return true if the given URI is a RelaxNG Schema and false otherwise.
+	 */
+	public static boolean isRNG(String uri) {
+		return uri != null && uri.endsWith(RNG_EXTENSION);
 	}
 
 	/**

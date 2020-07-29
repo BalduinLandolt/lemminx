@@ -124,7 +124,9 @@ public class XMLModelHandler implements XMLComponent, XMLDocumentFilter {
 			return new XMLModelSchemaValidator();
 		} else if (href.endsWith("dtd")) {
 			return new XMLModelDTDValidator();
-		}
+		} else if (href.endsWith("rng")){
+			return new XMLModelRNGValidator();
+		}  // TODO: rng compact (and schematron) here
 		return null;
 	}
 
